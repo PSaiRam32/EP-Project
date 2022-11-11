@@ -1,0 +1,78 @@
+<html xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+<head>
+  <title>Admin-Faculty</title>
+  <style>
+ .employeeTable {   
+   border-collapse:collapse;
+   border:1px solid #000000;
+}
+
+.employeeTableHeader {
+   text-align:center;
+   background:none repeat scroll 0 0 #B5B5B5;
+   border-bottom:1px solid #000000;  
+   padding:2px;
+   cell-padding:5px;
+}
+
+.employeeTableOddRow {
+   text-align:center;
+   background:none repeat scroll 0 0 #FFFFFFF;
+   cell-padding:5px;	
+}
+
+.employeeTableEvenRow {
+   text-align:center;
+   background:none repeat scroll 0 0 #D3D3D3;
+   cellpadding:5px;
+}
+  .safe1{
+  padding: 50px;
+
+border:4px solid black;
+margin-top:150px;
+margin-left:480px;
+width:450px;
+height:300px;
+background-image: url("Faculty.jpg");
+background-size: 100% 100%;
+  }
+
+</style>
+</head>
+<body background="Fac.jpg">
+  
+    <div class="safe1">
+    <h3>Faculty Details</h3>
+    <h:form>
+    <div class="table">
+    <h:dataTable value="#{faculty.list}" var="row"  styleClass = "employeeTable"
+   headerClass = "employeeTableHeader"
+   rowClasses = "employeeTableOddRow,employeeTableEvenRow">
+      <h:column>
+        <f:facet name="header">ID</f:facet>
+        #{row.id}
+      </h:column>
+      <h:column>
+        <f:facet name="header">Name</f:facet>
+        #{row.name}
+      </h:column>
+      <h:column>
+        <f:facet name="header">Designation</f:facet>
+        #{row.dsg}
+      </h:column>
+      <h:column>
+        <f:facet name="header">Acheivements</f:facet>
+        #{row.ach}
+      </h:column>
+      <h:column>
+        <f:facet name="header">Course</f:facet>
+        #{row.course}
+      </h:column>
+    </h:dataTable>
+    </div>
+</h:form>
+ </div>
+</body>
+</html>

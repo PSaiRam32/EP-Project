@@ -1,0 +1,98 @@
+<html xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+<head>
+  <title>Admin-Student</title>
+<style>
+ .employeeTable {   
+   border-collapse:collapse;
+   border:1px solid #000000;
+}
+
+.employeeTableHeader {
+   text-align:center;
+   background:none repeat scroll 0 0 #B5B5B5;
+   border-bottom:1px solid #000000;  
+   padding:2px;
+   cell-padding:5px;
+}
+
+.employeeTableOddRow {
+   text-align:center;
+   background:none repeat scroll 0 0 #FFFFFFF;
+   cell-padding:5px;	
+}
+
+.employeeTableEvenRow {
+   text-align:center;
+   background:none repeat scroll 0 0 #D3D3D3;
+   cellpadding:5px;
+}
+  .safe1{
+  padding: 50px;
+float:right;
+border:4px solid black;
+margin-top:150px;
+margin-right:100px;
+width:450px;
+height:300px;
+background-image: url("adb.jpg");
+background-size: 100% 100%;
+  }
+.safe{
+
+padding: 50px;
+float:left;
+border:4px solid black;
+width:450px;
+height:300px;
+margin-top:150px;
+margin-left:100px;
+background-color:white;
+background-image: url("adb.jpg");
+background-size: 100% 100%;
+}
+</style>
+</head>
+<body background="2.png">
+<div class="safe">
+  <h3 style="text-align: center">Student Details</h3>
+  <h:form>
+    <p>Student ID : <h:inputText value="#{student.id}" /></p>
+    <p>
+         <h:commandButton action="#{student.find()}" value="find" /> </p>
+      
+    <br/>
+    
+    <p> <h:outputLabel value="#{student.response}" /> </p>
+     </h:form>
+    </div>
+    <div class="safe1">
+    <h:dataTable value="#{student.list}" var="row" styleClass = "employeeTable"
+   headerClass = "employeeTableHeader"
+   rowClasses = "employeeTableOddRow,employeeTableEvenRow">
+      <h:column>
+        <f:facet name="header">ID</f:facet>
+        #{row.id}
+      </h:column>
+      <h:column>
+        <f:facet name="header">Name</f:facet>
+        #{row.name}
+      </h:column>
+      <h:column>
+        <f:facet name="header">Course</f:facet>
+        #{row.course}
+      </h:column>
+      <h:column>
+        <f:facet name="header">Cgpa</f:facet>
+        #{row.cgpa}
+      </h:column>
+      <h:column>
+        <f:facet name="header">Attendance</f:facet>
+        #{row.att}
+      </h:column>
+      
+    </h:dataTable>
+ 
+  </div>
+</body>
+</html>
