@@ -7,7 +7,7 @@ IDE : RedHat Codeready Studio.
 
 FrontEnd : JSF(Java server Faces).
 
-Backend : JPA(Java Persistence API).
+Backend : Hibernate JPA(Java Persistence API).
 
 
 Database : MySql
